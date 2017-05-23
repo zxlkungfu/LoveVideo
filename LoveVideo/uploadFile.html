@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="content-type"
+          content="text/html; charset=utf-8">
+
+    <title>上传文件</title>
+</head>
+
+<body>
+<p>上传文件</p>
+
+<form action="uploadFile.php"
+      method="post"
+      enctype="multipart/form-data"
+      target="_blank">
+    <input type="file"
+           name="myFile" /> <input type="submit"
+                                   value="提交" /><br>
+    用户名：<input type="text"
+               name="username" /><br>
+    标题：<input type="text"
+              name="title" /><br>
+    日期：<input type="text"
+              name="date" /><br>
+    时长：<input type="text"
+              name="duration" /><br>
+</form>
+</body>
+</html>

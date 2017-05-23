@@ -1,0 +1,64 @@
+div {
+    position: initial;
+}
+
+#backgroundImage {
+    position: initial;
+
+}
+
+h3 {
+    text-align: center;
+    font-size: 60px;
+    /*background-color: orange;*/
+}
+
+body {
+    background-image: url("star.jpg");
+    background-repeat: initial;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+table {
+    border: 1px solid green;
+    position: absolute;
+    top: 10%;
+    left: 20%;
+    width: 60%;
+}
+
+#username, #password {
+    color: green;
+    height: 100%;
+    width: 100%;
+    background-color: initial;
+    border-style: none;
+    font-size: 50px;
+}
+
+input {
+    color: green;
+}
+
+tr, td {
+    border: double;
+    height: 100px;
+    width: 100%;
+    align-content: center;
+    color: green;
+    font-size: 50px;
+}
+
+#login, #register {
+    width: 100%;
+    height: 50%;
+    font-size: 50px;
+}
+
+#firstTd {
+    text-align: center;
+    color: black;
+    font-style: normal;
+
+}
