@@ -32,15 +32,16 @@ for($i = 0; $i < $count; $i++) {
     $rows = fetchMultiData($sql, $link);
     $num = count($rows);
     for($j = 0; $j < $num; $j++) {
-        $comment[$j]["username"] = $rows[$j][1];
-        $comment[$j]["date"] = $rows[$j][2];
-        $comment[$j]["content"] = $rows[$j][3];
+        $comment[$j]["username"] = $rows[$j][2];
+        $comment[$j]["date"] = $rows[$j][3];
+        $comment[$j]["content"] = $rows[$j][4];
     }
     $videos[$i]["comment"] = $comment;
     
 }
 
 if($count) {
+    $output["error"] = "";
     $output["data"] = $videos;
     $output["count"] = $count;
     $output["message"] = "true";

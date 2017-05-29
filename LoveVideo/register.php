@@ -24,7 +24,7 @@ if($row) {
     returnData("", "当前用户名已经被注册，请重新选择");
 }
 
-$sql = "insert into User (id, username, password) values (0, '{$username}', '{$password}');";
+$sql = "insert into User (id, username, password, headerURL) values (0, '{$username}', '{$password}', '');";
 
 if(insertData($sql, $link)) {
     $data = array("username" => $username, "password" => $password);

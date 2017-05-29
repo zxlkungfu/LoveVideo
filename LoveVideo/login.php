@@ -18,6 +18,12 @@ if(!$link) {
     returnData('', mysqli_connect_error());
 }
 
+$sql = "select * from User where username = '{$username}' limit 1;";
+$row = fetchData($sql, $link);
+if(!$row) {
+    returnData("", "当前用户还没有注册");
+}
+
 $sql = "select * from User where username = '{$username}' and password = '{$password}';";
 
 $row = fetchData($sql, $link);
@@ -30,7 +36,7 @@ if($row) {
     returnData($data, '', 'true');
 } else {
     
-    returnData('', '查无此人');
+    returnData('', '密码错误');
 }
 
 mysqli_close($link);
