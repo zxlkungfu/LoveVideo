@@ -81,42 +81,46 @@
       <DataType>varchar(30)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="23" parent="8" name="PRIMARY">
+    <column id="23" parent="8" name="headerURL">
+      <Position>4</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <key id="24" parent="8" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="24" parent="9" name="id">
+    <column id="25" parent="9" name="id">
       <Position>1</Position>
       <DataType>int(10) unsigned zerofill|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="25" parent="9" name="username">
+    <column id="26" parent="9" name="username">
       <Position>2</Position>
       <DataType>varchar(30)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="26" parent="9" name="title">
+    <column id="27" parent="9" name="title">
       <Position>3</Position>
       <DataType>text|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="27" parent="9" name="date">
+    <column id="28" parent="9" name="date">
       <Position>4</Position>
       <DataType>varchar(30)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="28" parent="9" name="duration">
+    <column id="29" parent="9" name="duration">
       <Position>5</Position>
       <DataType>varchar(30)|0</DataType>
     </column>
-    <column id="29" parent="9" name="url">
+    <column id="30" parent="9" name="url">
       <Position>6</Position>
       <DataType>text|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="30" parent="9" name="PRIMARY">
+    <key id="31" parent="9" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
