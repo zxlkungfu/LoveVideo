@@ -32,11 +32,10 @@ if($row) {
     //  echo $row["id"];
     //  echo $row["username"];
     //  echo $row["password"];
-    $data = array('username' => $row['username'], 'password' => $row['password']);
-    returnData($data, '', 'true');
+    //    $data = array('username' => $row['username'], 'password' => $row['password']);
+    returnData($row, '', $link, 'true');
 } else {
     
-    returnData('', '密码错误');
+    returnData('', '密码错误', $link);
 }
 
-mysqli_close($link);

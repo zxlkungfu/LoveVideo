@@ -45,7 +45,10 @@ if($count) {
     $output["data"] = $videos;
     $output["count"] = $count;
     $output["message"] = "true";
+    mysqli_close($link);
     exit(json_encode($output));
+} else {
+    returnData("", "当前网站没有视频", $link);
 }
 
-mysqli_close($link);
+

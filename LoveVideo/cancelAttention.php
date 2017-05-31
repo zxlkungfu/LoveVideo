@@ -30,14 +30,14 @@ if($row) {
     
     if($result) {
         $data = array("username" => $username, "friend" => $friend);
-        returnData($data, "", "true");
+        returnData($data, "", $link, "true");
     } else {
-        returnData("", "取关失败");
+        returnData("", "取关失败", $link);
     }
     
 } else {
-    returnData("", "不是好友关系，无法取关");
+    returnData("", "不是好友关系，无法取关", $link);
 }
-mysqli_close($link);
+
 
 

@@ -120,7 +120,12 @@
       <DataType>text|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="31" parent="9" name="PRIMARY">
+    <column id="31" parent="9" name="imgURL">
+      <Position>7</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="32" parent="9" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>

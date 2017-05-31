@@ -27,9 +27,7 @@ $sql = "update User set password = '{$password}' where username = '{$username}';
 
 if(updateData($sql, $link)) {
     $data = array("username" => $username, "password" => $password);
-    returnData($data, "", "true");
+    returnData($data, "", $link, "true");
 } else {
-    returnData("", "未知错误");
+    returnData("", "未知错误，请稍后再试", $link);
 }
-
-mysqli_close($link);

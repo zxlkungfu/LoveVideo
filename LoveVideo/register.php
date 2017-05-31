@@ -28,9 +28,8 @@ $sql = "insert into User (id, username, password, headerURL) values (0, '{$usern
 
 if(insertData($sql, $link)) {
     $data = array("username" => $username, "password" => $password);
-    returnData($data, "", "true");
+    returnData($data, "", $link, "true");
 } else {
-    returnData("", "未知错误");
+    returnData("", "注册失败，请稍后再试", $link);
 }
 
-mysqli_close($link);

@@ -5,10 +5,7 @@ header("content-type=text/html; charset=utf-8");
 require_once 'include.php';
 
 $username = $_POST["username"];
-$video = $_POST["video"]; // title、date 、duration
-$title = $video[0]["title"];
-$date = $video[1]["date"];
-$duration = $video[2]["duration"];
+
 
 
 // returnData($video, "", "true");
@@ -49,26 +46,9 @@ $url = $pathPrefix . '/' . $destination;
 //echo $url;
 
 if($flag) {
-    // 写入Video表格
-    $link = connectDB("LoveVideo");
-    if(!$link) {
-        returnData("", "数据库服务器错误");
-    }
-    
-    $sql = "insert into Video (id, username, title, date, duration, url) values (0,'{$username}', '{$title}','{$date}','{$duration}','{$url}');";
-    
-    if(!insertData($sql, $link)) {
-        
-        returnData("", "数据库服务器错误");
-    }
-    
-    returnData($url, "", "true");
-    
-    closeDB($link);
-    
+    returnData($url, "", $link, "true");
 } else {
-    
-    returnData("", error_get_last());
+    returnData("", "异常错误", $link);
 }
 
 

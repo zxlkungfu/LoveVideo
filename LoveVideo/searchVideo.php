@@ -15,7 +15,7 @@ if(!$link) {
 }
 
 $where = $_POST["where"];
-$sql = "select * from Video where username = '{$where}' or title = '{$where}' order by date desc limit 20";
+$sql = "select * from Video where username like '%{$where}%' or title like '%{$where}%' order by date desc;";
 
 $row = fetchMultiData($sql, $link);
 $count = count($row);
@@ -27,14 +27,18 @@ for($i = 0; $i < $count; $i++) {
     $videos[$i]["date"] = $row[$i][3];
     $videos[$i]["duration"] = $row[$i][4];
     $videos[$i]["url"] = $row[$i][5];
+    $videos[$i]["imgURL"] = $row[$i][6];
 }
 
 if($count) {
     $output["data"] = $videos;
     $output["count"] = $count;
     $output["message"] = "true";
+    mysqli_close($link);
     exit(json_encode($output));
+} else {
+    returnData("", "没有相关", $link);
 }
 
-mysqli_close($link);
+
 	
