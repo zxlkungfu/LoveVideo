@@ -15,7 +15,7 @@ $title = $video[0]["title"];
 $date = $video[1]["date"];
 $duration = $video[2]["duration"];
 $url = $video[3]["url"];
-$imgURL = $video[4]["imgURinsertData($sql, $link)L"];
+$imgURL = $video[4]["imgURL"];
 
 if(!connectSQLSever()) {
     returnData("", mysqli_connect_error());

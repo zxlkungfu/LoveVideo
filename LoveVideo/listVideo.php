@@ -13,8 +13,14 @@ if(!$link) {
     returnData("", mysqli_connect_error());
 }
 
-$where = $_POST["username"];
-$sql = "select * from Video order by date desc limit 20";
+$where = $_POST["where"];
+$sql;
+if($where) {
+    $sql = "select * from Video where username = '{$where}' or title = '{$where}' order by date desc";
+} else {
+    $sql = "select * from Video order by date desc";
+}
+
 $row = fetchMultiData($sql, $link);
 
 $count = count($row);
@@ -26,6 +32,7 @@ for($i = 0; $i < $count; $i++) {
     $videos[$i]["date"] = $row[$i][3];
     $videos[$i]["duration"] = $row[$i][4];
     $videos[$i]["url"] = $row[$i][5];
+    $videos[$i]["imgURL"] = $row[$i][6];
     
     $comment = array();
     $sql = "select * from Comment where url = '{$row[$i][5]}' order by date DESC;";
